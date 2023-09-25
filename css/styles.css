@@ -282,8 +282,12 @@ body[data-theme=theme3] .switcher::after {
     --pad: 20px;
     --fs: 24px;
   }
+  .calculator-header__system {
+    font-size: 14px;
+    bottom: 4px;
+  }
   .calculator-screen {
-    font-size: 48px;
+    font-size: 44px;
     line-height: 60px;
     height: 70px;
   }
