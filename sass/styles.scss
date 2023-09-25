@@ -102,9 +102,13 @@ $col: calc(100% / 12);
   &-overview {
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 60px;
+    flex-direction: column;
+    &__body {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      flex: 1;
+    }
   }
 
   &-top {
@@ -252,11 +256,8 @@ body[data-theme="theme3"] {
 .attribution {
   color: var(--text);
   font-size: 14px;
+  padding: 15px 0;
   text-align: center;
-  position: fixed;
-  left: 0;
-  bottom: 15px;
-  width: 100%;
   a {
     color: var(--text);
   }
