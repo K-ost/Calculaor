@@ -139,6 +139,14 @@ body {
   background: var(--bg-screen);
   border-radius: var(--radius);
   margin: 0 0 var(--grid);
+  position: relative;
+}
+.calculator-header__system {
+  position: absolute;
+  right: var(--pad);
+  color: var(--text-screen);
+  font-size: 16px;
+  bottom: 7px;
 }
 .calculator-screen {
   background: 0;
@@ -155,6 +163,7 @@ body {
   text-align: right;
   width: 100%;
   --webkit-appearance: none;
+  position: relative;
 }
 .calculator-body {
   background: var(--bg-toggle);

@@ -6,6 +6,7 @@ const resultBtn = document.querySelector('.calculator-result')
 const screenEl = document.querySelector('.calculator-screen')
 const reset = document.querySelector('.calculator-reset')
 const delBtn = document.querySelector('.calculator-del')
+const systemMessage = document.querySelector('#system_message')
 
 // store
 let firstType = true
@@ -41,28 +42,33 @@ nums.forEach(btn => {
   btn.addEventListener('click', (e) => {
     let symbol = e.target.textContent
 
-    if (!typedNumber.includes('.')) {
-      typedNumber.push(symbol)
-    } else {
-      if (symbol !== '.') {
+    if (screenEl.value.length < 10) {
+
+      if (!typedNumber.includes('.')) {
         typedNumber.push(symbol)
+      } else {
+        if (symbol !== '.') {
+          typedNumber.push(symbol)
+        }
       }
-    }
 
-    // remove first 0
-    if (typedNumber[0] === '0') {
-      typedNumber.shift()
-    }
+      // remove first 0
+      if (typedNumber[0] === '0') {
+        typedNumber.shift()
+      }
 
-    // dot
-    if (typedNumber[0] === '.') {
-      typedNumber.shift()
-      typedNumber.unshift('.')
-      typedNumber.unshift('0')
-    }
+      // dot
+      if (typedNumber[0] === '.') {
+        typedNumber.shift()
+        typedNumber.unshift('.')
+        typedNumber.unshift('0')
+      }
 
-    // View
-    screenEl.value = typedNumber.join('')
+      // View
+      screenEl.value = typedNumber.join('')
+    } else {
+      systemMessage.textContent = '(Max size of number is 10 characters)'
+    }
   })
 })
 
@@ -86,7 +92,11 @@ function calculate() {
     }
     if (operation === 'division') {
       screenEl.value = storageNumber / typed
-      storageNumber /= typed
+      if (storageNumber === 0 && typed === 0) {
+        screenEl.value = 'Error'
+      } else {
+        storageNumber /= typed
+      }
     }
     
   } else {
