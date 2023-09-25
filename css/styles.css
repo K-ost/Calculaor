@@ -120,6 +120,7 @@ body {
 }
 .calculator-title {
   color: var(--text-switcher);
+  font-weight: 700;
 }
 .calculator-theme {
   color: var(--text-switcher);
