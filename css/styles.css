@@ -121,6 +121,8 @@ body {
 .calculator-title {
   color: var(--text-switcher);
   font-weight: 700;
+  margin: 0;
+  font-size: var(--fs);
 }
 .calculator-theme {
   color: var(--text-switcher);

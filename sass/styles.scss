@@ -116,6 +116,8 @@ $col: calc(100% / 12);
   &-title {
     color: var(--text-switcher);
     font-weight: 700;
+    margin: 0;
+    font-size: var(--fs);
   }
   &-theme {
     color: var(--text-switcher);
