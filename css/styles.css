@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+:root {
+  --size-mb: 375px;
+  --size-ds: 1440px;
+  --ff: "League Spartan", sans-serif;
+  --fs: 32px;
+  --grid: 20px;
+  --pad: 24px;
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* theme */
+body[data-theme=theme1] {
+  --bg: hsl(222, 26%, 31%);
+  --bg-toggle: hsl(223, 31%, 20%);
+  --bg-screen: hsl(224, 36%, 15%);
+  --key-blue-bg: hsl(225, 21%, 49%);
+  --key-blue-shadow: hsl(224, 28%, 35%);
+  --key-red-bg: hsl(6, 63%, 50%);
+  --key-red-shadow: hsl(6, 70%, 34%);
+  --key-light-bg: hsl(30, 25%, 89%);
+  --key-light-shadow: hsl(28, 16%, 65%);
+  --text-screen: hsl(0, 0%, 100%);
+  --text-btn: hsl(221, 14%, 31%);
+  --text-operation: hsl(0, 0%, 100%);
+  --text-equal: hsl(0, 0%, 100%);
+  --text: hsl(0, 0%, 100%);
+  --text-switcher: hsl(0, 0%, 100%);
+}
+
+body[data-theme=theme2] {
+  --bg: hsl(0, 0%, 90%);
+  --bg-toggle: hsl(0, 5%, 81%);
+  --bg-screen: hsl(0, 0%, 93%);
+  --key-blue-bg: hsl(185, 42%, 37%);
+  --key-blue-shadow: hsl(185, 58%, 25%);
+  --key-red-bg: hsl(25, 98%, 40%);
+  --key-red-shadow: hsl(25, 99%, 27%);
+  --key-light-bg: hsl(45, 7%, 89%);
+  --key-light-shadow: hsl(35, 11%, 61%);
+  --text-screen: hsl(60, 10%, 19%);
+  --text-btn: hsl(60, 10%, 19%);
+  --text-operation: hsl(0, 0%, 100%);
+  --text-equal: hsl(0, 0%, 100%);
+  --text: hsl(60, 10%, 19%);
+  --text-switcher: hsl(60, 10%, 19%);
+}
+
+body[data-theme=theme3] {
+  --bg: hsl(268, 75%, 9%);
+  --bg-toggle: hsl(268, 71%, 12%);
+  --bg-screen: hsl(268, 71%, 12%);
+  --key-blue-bg: hsl(281, 89%, 26%);
+  --key-blue-shadow: hsl(285, 91%, 52%);
+  --key-red-bg: hsl(176, 100%, 44%);
+  --key-red-shadow: hsl(177, 92%, 70%);
+  --key-light-bg: hsl(268, 47%, 21%);
+  --key-light-shadow: hsl(290, 70%, 36%);
+  --text-screen: hsl(52, 100%, 62%);
+  --text-btn: hsl(52, 100%, 62%);
+  --text-switcher: hsl(52, 100%, 62%);
+  --text-operation: hsl(0, 0%, 100%);
+  --text-equal: hsl(198, 20%, 13%);
+  --text: hsl(0, 0%, 100%);
+}
+
+/* Body */
+body {
+  background: var(--bg);
+  margin: 0;
+  font-family: var(--ff);
+  font-size: var(--fs);
+}
+
+/*  grid */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(var(--grid) / 2 * -1);
+  margin-right: calc(var(--grid) / 2 * -1);
+}
+
+[class*=grid] {
+  padding-left: calc(var(--grid) / 2);
+  padding-right: calc(var(--grid) / 2);
+  width: 100%;
+}
+
+.grid3 {
+  flex: 0 0 25%;
+  max-width: 25%;
+}
+
+.grid6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+/* calculator */
+.calculator {
+  margin: 0 auto;
+  max-width: 480px;
+  padding: 0 15px;
+}
+.calculator-top {
+  display: flex;
+  align-items: center;
+  padding: 40px 0 var(--pad);
+}
+.calculator-title {
+  color: var(--text-switcher);
+}
+.calculator-theme {
+  color: var(--text-switcher);
+  margin: 2px 24px 0 auto;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+}
+.calculator-header {
+  background: var(--bg-screen);
+  border-radius: var(--radius);
+  margin: 0 0 var(--grid);
+}
+.calculator-screen {
+  background: 0;
+  border: 0;
+  border-radius: var(--radius);
+  color: var(--text-screen);
+  font-size: 52px;
+  line-height: 60px;
+  font-family: var(--ff);
+  height: 100px;
+  margin: 0;
+  outline: none;
+  padding: 22px var(--pad) 18px;
+  text-align: right;
+  width: 100%;
+  --webkit-appearance: none;
+}
+.calculator-body {
+  background: var(--bg-toggle);
+  border-radius: var(--radius);
+  padding: var(--pad);
+}
+.calculator .grid3 {
+  margin-bottom: var(--grid);
+}
+.calculator-btn {
+  background: var(--key-light-bg);
+  border: 0;
+  border-bottom: 4px solid var(--key-light-shadow);
+  border-radius: var(--radius);
+  color: var(--text-btn);
+  cursor: pointer;
+  font-family: var(--ff);
+  font-size: var(--fs);
+  line-height: 40px;
+  height: 60px;
+  padding: 12px 0 8px;
+  text-transform: uppercase;
+  text-align: center;
+  width: 100%;
+}
+.calculator-btn:active {
+  border-bottom: 0;
+  padding: 14px 0 6px;
+  opacity: 0.7;
+}
+.calculator-btn__blue {
+  background: var(--key-blue-bg);
+  border-bottom: 4px solid var(--key-blue-shadow);
+  color: var(--text-operation);
+}
+.calculator-btn__red {
+  background: var(--key-red-bg);
+  border-bottom: 4px solid var(--key-red-shadow);
+  color: var(--text-equal);
+}
+
+/* switcher */
+.switcher {
+  display: flex;
+  position: relative;
+  font-size: 16px;
+  color: var(--text);
+  width: 70px;
+}
+.switcher::before, .switcher::after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+.switcher::before {
+  background: var(--bg-toggle);
+  border-radius: 26px;
+  height: 26px;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.switcher::after {
+  background: var(--key-red-bg);
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  left: 5px;
+  top: 5px;
+  transition: all 200ms ease-in-out;
+}
+.switcher-item {
+  color: var(--text-switcher);
+  cursor: pointer;
+  display: block;
+  position: relative;
+  text-align: center;
+  height: 26px;
+  flex: 1;
+}
+.switcher-item input {
+  position: absolute;
+  opacity: 0;
+}
+.switcher-item span {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  top: -20px;
+}
+
+body[data-theme=theme2] .switcher::after {
+  transform: translateX(22px);
+}
+
+body[data-theme=theme3] .switcher::after {
+  transform: translateX(43px);
+}
+
+/* attribution */
+.attribution {
+  color: var(--text);
+  font-size: 14px;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  bottom: 15px;
+  width: 100%;
+}
+.attribution a {
+  color: var(--text);
+}
+
+@media screen and (max-width: 540px) {
+  :root {
+    --grid: 16px;
+    --pad: 20px;
+    --fs: 24px;
+  }
+  .calculator-screen {
+    font-size: 48px;
+    line-height: 60px;
+    height: 70px;
+  }
+  .calculator-btn {
+    height: 54px;
+    line-height: 34px;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
