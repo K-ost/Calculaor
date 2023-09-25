@@ -87,11 +87,11 @@ function calculate() {
       storageNumber -= typed
     }
     if (operation === 'multiple') {
-      screenEl.value = storageNumber * typed
+      screenEl.value = String(storageNumber * typed).slice(0,10)
       storageNumber *= typed
     }
     if (operation === 'division') {
-      screenEl.value = storageNumber / typed
+      screenEl.value = String(storageNumber / typed).slice(0,10)
       if (storageNumber === 0 && typed === 0) {
         screenEl.value = 'Error'
       } else {
