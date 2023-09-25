@@ -5,7 +5,6 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
 - [My process](#my-process)
@@ -14,23 +13,14 @@ This is a solution to the [Calculator app challenge on Frontend Mentor](https://
 
 ## Overview
 
-### The challenge
-
-Users should be able to:
-
-- See the size of the elements adjust based on their device's screen size
-- Perform mathmatical operations like addition, subtraction, multiplication, and division
-- Adjust the color theme based on their preference
-- **Bonus**: Have their initial theme preference checked using `prefers-color-scheme` and have any additional changes saved in the browser
-
 ### Screenshot
 
 ![](./screenshot.jpg)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/K-ost?tab=repositories](https://github.com/K-ost?tab=repositories)
+- Live Site URL: [https://k-ost.github.io/Calculaor/](https://k-ost.github.io/Calculaor/)
 
 ## My process
 
@@ -44,6 +34,5 @@ Users should be able to:
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Website - [github](https://github.com/K-ost?tab=repositories)
+- Frontend Mentor - [@K-ost](https://www.frontendmentor.io/profile/K-ost)
