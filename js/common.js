@@ -22,12 +22,14 @@ function resetCalc() {
   storageNumber = undefined
   typedNumber = ['0']
   screenEl.value = 0
+  systemMessage.textContent = ''
 }
 
 
 // click reset
 reset.addEventListener('click', resetCalc)
 delBtn.addEventListener('click', () => {
+  systemMessage.textContent = ''
   if (typedNumber.length !== 1) {
     typedNumber.pop()
   } else {

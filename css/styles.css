@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@300;700&display=swap");
 :root {
   --size-mb: 375px;
   --size-ds: 1440px;
@@ -11,6 +11,7 @@
 
 * {
   box-sizing: border-box;
+  font-weight: 700;
 }
 
 /* theme */
@@ -142,11 +143,13 @@ body {
   position: relative;
 }
 .calculator-header__system {
+  color: var(--text-screen);
+  opacity: 0.45;
   position: absolute;
   right: var(--pad);
-  color: var(--text-screen);
+  font-weight: 300;
   font-size: 16px;
-  bottom: 7px;
+  top: 10px;
 }
 .calculator-screen {
   background: 0;
@@ -159,7 +162,7 @@ body {
   height: 100px;
   margin: 0;
   outline: none;
-  padding: 24px var(--pad) 16px;
+  padding: 34px var(--pad) 16px 14px;
   text-align: right;
   width: 100%;
   --webkit-appearance: none;
@@ -291,7 +294,7 @@ body[data-theme=theme3] .switcher::after {
   .calculator-screen {
     font-size: 44px;
     line-height: 60px;
-    height: 70px;
+    height: 90px;
   }
   .calculator-btn {
     height: 54px;
