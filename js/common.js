@@ -76,36 +76,41 @@ nums.forEach(btn => {
 // Calculating
 function calculate() {
   let typed = Number(typedNumber.join(''))
-  if (!firstType) {
-    
-    if (operation === 'adding') {
-      screenEl.value = storageNumber + typed
-      storageNumber += typed
-    }
-    if (operation === 'subtraction') {
-      screenEl.value = storageNumber - typed
-      storageNumber -= typed
-    }
-    if (operation === 'multiple') {
-      screenEl.value = String(storageNumber * typed).slice(0,10)
-      storageNumber *= typed
-    }
-    if (operation === 'division') {
-      screenEl.value = String(storageNumber / typed).slice(0,10)
-      if (storageNumber === 0 && typed === 0) {
-        screenEl.value = 'Error'
-      } else {
-        storageNumber /= typed
-      }
-    }
-    
-  } else {
+  
+  if (firstType) {
     storageNumber = typed
+  } else {
+
+    if (typed !== 0) {
+
+      if (operation === 'adding') {
+        screenEl.value = storageNumber + typed
+        storageNumber += typed
+      }
+      if (operation === 'subtraction') {
+        screenEl.value = storageNumber - typed
+        storageNumber -= typed
+      }
+      if (operation === 'multiple') {
+        screenEl.value = String(storageNumber * typed).slice(0,10)
+        storageNumber *= typed
+      }
+      if (operation === 'division') {
+        screenEl.value = String(storageNumber / typed).slice(0,10)
+        if (storageNumber === 0 && typed === 0) {
+          screenEl.value = 'Error'
+        } else {
+          storageNumber /= typed
+        }
+      }
+
+    }
+    
   }
 
   typedNumber = ['0']
 
-  console.log(`typedNumber: ${Number(typedNumber.join(''))}, storageNumber: ${storageNumber}`)
+  console.log(`typedNumber: ${Number(typedNumber.join(''))}, storageNumber: ${storageNumber}, firstType: ${firstType}`)
 }
 
 
@@ -122,9 +127,33 @@ operationBtns.forEach(btn => {
   })
 })
 
+
 // resultBtn
 resultBtn.addEventListener('click', calculate)
 
+
+// Sound support
+const soundBtn = document.querySelector('.calculator-sound')
+let sound = true
+soundBtn.addEventListener('click', e => {
+  if (!e.target.classList.contains('disabled')) {
+    e.target.classList.add('disabled')
+    sound = false
+  } else {
+    e.target.classList.remove('disabled')
+    sound = true
+  }
+})
+document.querySelectorAll('.calculator-btn').forEach(el => {
+el.addEventListener('click', () => {
+    if (sound) {
+      const audio = new Audio('click.mp3')
+      audio.play()
+    } else {
+      return false
+    }
+  })
+})
 
 
 

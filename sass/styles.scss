@@ -125,7 +125,7 @@ $col: calc(100% / 12);
   }
   &-theme {
     color: var(--text-switcher);
-    margin: 2px 24px 0 auto;
+    margin: 2px 24px 0 0;
     font-size: 12px;
     line-height: 14px;
     text-transform: uppercase;
@@ -163,6 +163,25 @@ $col: calc(100% / 12);
     position: relative;
   }
 
+  &-sound {
+    background: var(--key-blue-bg);
+    color: var(--text-screen);
+    font-size: 16px;
+    border: 0;
+    cursor: pointer;
+    margin: 0;
+    outline: none;
+    margin: 0 24px 0 auto;
+    border-radius: 12px;
+    padding: 6px 10px 4px;
+    font-family: var(--ff);
+    text-transform: uppercase;
+    --webkit-appearance: none;
+    &.disabled {
+      opacity: 0.4;
+    }
+  }
+
   &-body {
     background: var(--bg-toggle);
     border-radius: var(--radius);
@@ -181,11 +200,13 @@ $col: calc(100% / 12);
     font-family: var(--ff);
     font-size: var(--fs);
     line-height: 40px;
+    outline: none;
     height: 60px;
     padding: 12px 0 8px;
     text-transform: uppercase;
     text-align: center;
     width: 100%;
+    touch-action: manipulation;
     &:active {
       border-bottom: 0;
       padding: 14px 0 6px;
