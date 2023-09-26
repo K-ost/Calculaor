@@ -132,31 +132,6 @@ operationBtns.forEach(btn => {
 resultBtn.addEventListener('click', calculate)
 
 
-// Sound support
-const soundBtn = document.querySelector('.calculator-sound')
-let sound = true
-soundBtn.addEventListener('click', e => {
-  if (!e.target.classList.contains('disabled')) {
-    e.target.classList.add('disabled')
-    sound = false
-  } else {
-    e.target.classList.remove('disabled')
-    sound = true
-  }
-})
-document.querySelectorAll('.calculator-btn').forEach(el => {
-el.addEventListener('click', () => {
-    if (sound) {
-      const audio = new Audio('click.mp3')
-      audio.play()
-    } else {
-      return false
-    }
-  })
-})
-
-
-
 // Theme switcher
 const switchBtns = document.querySelectorAll('.switcher input')
 switchBtns.forEach(el => {
